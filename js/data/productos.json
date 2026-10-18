@@ -10,8 +10,8 @@
   {
     "id": 2,
     "nombre": "Zapatillas Running Pro",
-    "descripcion": "Diseñadas para acompañar tus entrenamientos.",
-    "precio": 179.9,
+    "descripcion": "Diseñadas para acompañar tus entrenamientos con un adnar suave y flexible para todo tipo de caminos ",
+    "precio": 279.9,
     "imagen": "/img/zapatillas02.jpg",
     "categoria": "Zapatillas"
   },
