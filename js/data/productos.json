@@ -1,0 +1,19 @@
+
+[
+  {
+    "id": 1,
+    "nombre": "Zapatillas Urbanas Classic",
+    "descripcion": "Estilo versátil para todos los días.",
+    "precio": 129.90,
+    "imagen": "img/zapatillas01.jpg",
+    "categoria": "Zapatillas"
+  },
+  {
+    "id": 2,
+    "nombre": "Zapatillas Running Pro",
+    "descripcion": "Diseñadas para acompañar tus entrenamientos.",
+    "precio": 179.90,
+    "imagen": "img/zapatillas02.jpg",
+    "categoria": "Zapatillas"
+  }
+]
