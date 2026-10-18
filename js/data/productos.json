@@ -126,5 +126,12 @@
     "precio": 125.9,
     "imagen": "/img/zapatillas02.jpg",
     "categoria": "Zapatillas"
+  },
+  {
+    "nombre": "Prueba de catalogo",
+    "descripcion": "Producto temporal para comprobar la creacion desde pager CMS",
+    "precio": 49.9,
+    "imagen": "/img/zapatillas03.jpg",
+    "categoria": "Zapatillas"
   }
 ]
