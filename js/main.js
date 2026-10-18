@@ -374,7 +374,13 @@ if (portadaWhatsApp && typeof configuracionCatalogo !== "undefined") {
 // Muestra los productos al abrir la página.
 // ============================================================
 
-mostrarProductos();
+cargarProductos()
+    .then(() => mostrarProductos())
+    .catch(error => {
+        console.error("Error al cargar los productos:", error);
+        contenedorProductos.innerHTML =
+            "<p>No se pudieron cargar los productos. Inténtalo más tarde.</p>";
+    });
 
 
 /* =========================================
