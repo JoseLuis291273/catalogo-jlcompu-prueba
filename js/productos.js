@@ -15,14 +15,14 @@ async function cargarProductos() {
     productos = await respuesta.json();
 
     // Adaptar los campos que Pages CMS guarda actualmente.
-    productos = productos.map(producto => ({
-        id: producto.id ?? producto.identificación,
-        nombre: producto.nombre,
-        descripcion: producto.descripcion,
-        precio: producto.precio,
-        imagen: producto.imagen,
-        categoria: producto.categoria ?? producto.categoría
-    }));
+   productos = productos.map((producto, indice) => ({
+    id: producto.id ?? producto.identificacion ?? indice + 1,
+    nombre: producto.nombre,
+    descripcion: producto.descripcion,
+    precio: producto.precio,
+    imagen: producto.imagen,
+    categoria: producto.categoria ?? producto.categorias
+}));
 }
 
 const configuracionCatalogo = {
