@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "nombre": "Zapatillas Urbanas Classic",
     "descripcion": "Prueba de edición desde el panel autoadministrable.",
     "precio": 129.9,
