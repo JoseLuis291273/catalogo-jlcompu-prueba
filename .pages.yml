@@ -1,0 +1,40 @@
+
+media:
+  - name: productos
+    label: Imágenes de productos
+    input: img
+    output: /img
+
+content:
+  - name: catalogo
+    label: Catálogo de productos
+    type: file
+    path: js/data/productos.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        label: ID
+        type: number
+        readonly: true
+      - name: nombre
+        label: Nombre del producto
+        type: string
+        required: true
+      - name: descripcion
+        label: Descripción
+        type: text
+      - name: precio
+        label: Precio (S/)
+        type: number
+        required: true
+      - name: imagen
+        label: Fotografía
+        type: image
+      - name: categoria
+        label: Categoría
+        type: select
+        options:
+          values:
+            - Zapatillas
+            - Relojes
