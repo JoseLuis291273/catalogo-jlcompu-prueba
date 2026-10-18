@@ -6,7 +6,7 @@
 let productos = [];
 
 async function cargarProductos() {
-    const respuesta = await fetch("js/datos/productos.json");
+    const respuesta = await fetch("js/data/productos.json");
 
     if (!respuesta.ok) {
         throw new Error("No se pudo cargar el archivo de productos.");
