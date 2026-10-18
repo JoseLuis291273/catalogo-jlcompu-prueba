@@ -1,0 +1,2551 @@
+
+/* =========================================================
+   1. FUENTES DE GOOGLE
+   Tipografías utilizadas en los textos y títulos.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   2. VARIABLES GLOBALES
+   Aquí se definen los colores principales de la página.
+   Puedes cambiarlos sin modificar todo el CSS.
+   ========================================================= */
+
+:root {
+    --ink: #17252f;          /* Color principal de los textos */
+    --ink-soft: #253944;     /* Color oscuro secundario */
+    --accent: #c9f36b;       /* Verde lima principal */
+    --accent-dark: #a9d84a;  /* Verde lima al pasar el mouse */
+    --paper: #f7f8f5;         /* Fondo gris claro */
+    --muted: #687780;         /* Texto secundario */
+}
+
+
+/* =========================================================
+   3. CONFIGURACIÓN GENERAL
+   Se aplica a toda la página web.
+   ========================================================= */
+
+/* Incluye bordes y rellenos en el tamaño total de los elementos */
+* {
+    box-sizing: border-box;
+}
+
+/* Desplazamiento suave al pulsar enlaces internos */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilo general del texto y del fondo */
+body {
+    color: var(--ink);
+    background: #fff;
+    font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+/* Fuente de los títulos y del nombre de la marca */
+h1,
+h2,
+h3,
+h4,
+.navbar-brand {
+    font-family: 'Manrope', system-ui, sans-serif;
+}
+
+
+/* =========================================================
+   4. BARRA DE NAVEGACIÓN
+   Estilos del menú superior de la página.
+   ========================================================= */
+
+/* Fondo y espacio interno del menú */
+.site-nav {
+    background: #17252f;
+    padding: .95rem 0;
+}
+
+/* Nombre o logotipo escrito en el menú */
+.navbar-brand {
+    letter-spacing: .08em;
+    font-size: 1.05rem;
+}
+
+/* Cuadro verde que acompaña al nombre de la marca */
+.brand-mark {
+    display: inline-grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    color: var(--ink);
+    background: var(--accent);
+    margin-right: .4rem;
+}
+
+/* Texto secundario junto al nombre de la marca */
+.brand-light {
+    color: #aab7bd;
+    font-weight: 500;
+}
+
+/* Enlaces del menú */
+.nav-link {
+    color: #e3e9e9 !important;
+    font-size: .93rem;
+}
+
+/* Color del enlace cuando el usuario pasa el mouse */
+.nav-link:hover {
+    color: var(--accent) !important;
+}
+
+
+/* =========================================================
+   5. PORTADA PRINCIPAL (HERO)
+   Es la primera sección grande que ve el visitante.
+   ========================================================= */
+
+/* Fondo oscuro con degradado y texto blanco */
+.hero-section {
+    color: white;
+    background: linear-gradient(
+        125deg,
+        #17252f 0%,
+        #223a43 65%,
+        #304b4d 100%
+    );
+    overflow: hidden;
+}
+
+/* Texto pequeño que aparece encima del título */
+.hero-eyebrow,
+.section-kicker {
+    font-size: .76rem;
+    letter-spacing: .16em;
+    font-weight: 800;
+    color: #b7e95a;
+}
+
+/* Tamaño y espaciado del título principal */
+.hero-section h1 {
+    line-height: 1.08;
+    letter-spacing: -.055em;
+}
+
+/* Color especial para una parte del título */
+.hero-section h1 span {
+    color: var(--accent);
+}
+
+/* Texto descriptivo de la portada */
+.hero-copy {
+    color: #d1dcdd;
+    max-width: 540px;
+    font-size: 1.1rem;
+}
+
+/* Botón principal de la portada */
+.btn-accent {
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    color: #17252f;
+    font-weight: 800;
+    padding: .85rem 1.2rem;
+}
+
+/* Efecto del botón al pasar el mouse */
+.btn-accent:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: #17252f;
+}
+
+/* Nota pequeña de la demostración */
+.demo-note {
+    color: #9fb0b5;
+    font-size: .8rem;
+}
+
+
+
+/* =========================================
+   IMAGEN PRINCIPAL DE LA PORTADA
+   ========================================= */
+
+.hero-photo {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 24px;
+    background-color: #14252d;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* La fotografía ocupa todo el espacio */
+.hero-photo-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Efecto al pasar el cursor */
+.hero-photo:hover .hero-photo-image {
+    transform: scale(1.04);
+}
+
+/* Capa oscura para que el texto sea legible */
+.hero-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(8, 20, 27, 0.85),
+        rgba(8, 20, 27, 0.05) 70%
+    );
+}
+
+/* Etiqueta superior */
+.hero-photo-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 9px 14px;
+    border-radius: 30px;
+    background: #c6f36b;
+    color: #17251d;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Texto situado en la parte inferior */
+.hero-photo-copy {
+    position: absolute;
+    right: 22px;
+    bottom: 24px;
+    left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: #ffffff;
+}
+
+.hero-photo-copy span {
+    font-size: 0.95rem;
+}
+
+.hero-photo-copy strong {
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 767px) {
+    .hero-photo {
+        height: 300px;
+    }
+}
+
+
+/* =========================================
+   NUEVA PORTADA: NEGRO Y VERDE NEÓN
+   ========================================= */
+
+header.hero-section {
+    position: relative;
+    overflow: hidden;
+    padding: 30px 0 38px;
+    color: #ffffff;
+    background:
+        radial-gradient(
+            ellipse at 72% 55%,
+            rgba(47, 150, 0, 0.22),
+            transparent 42%
+        ),
+        linear-gradient(110deg, #030705, #071108 65%, #020402);
+}
+
+/* Mantener el contenido por encima del fondo */
+.hero-layout {
+    position: relative;
+    min-height: 510px;
+    z-index: 1;
+}
+
+/* Etiqueta de nueva colección */
+.hero-badge {
+    display: inline-block;
+    padding: 7px 12px;
+    margin-bottom: 18px;
+    border: 1px solid #9bdd28;
+    border-radius: 30px;
+    color: #c6f36b;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Título grande */
+.hero-title {
+    margin-bottom: 18px;
+    color: #ffffff;
+    font-size: clamp(2.7rem, 4.2vw, 4.2rem);
+    font-weight: 900;
+    line-height: 0.98;
+    letter-spacing: -1.5px;
+}
+
+/* Palabra verde */
+.hero-title span {
+    color: #a8f000;
+}
+
+/* Descripción */
+header.hero-section .hero-copy {
+    max-width: 440px;
+    margin-bottom: 22px;
+    color: #d2d9d3;
+    font-size: 0.98rem;
+    line-height: 1.65;
+}
+
+/* Botones en una fila */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Botón principal */
+.hero-actions .btn-accent {
+    padding: 12px 19px;
+    border: 1px solid #a8f000;
+    border-radius: 10px;
+    background: #a8f000;
+    color: #10180a;
+    font-weight: 800;
+}
+
+/* Botón WhatsApp */
+.btn-hero-whatsapp {
+    padding: 12px 15px;
+    border: 1px solid #5b8c20;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 0.88rem;
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-hero-whatsapp:hover {
+    border-color: #a8f000;
+    background: rgba(168, 240, 0, 0.12);
+    color: #c6f36b;
+}
+
+/* Beneficios debajo de los botones */
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.hero-feature {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.hero-feature > span {
+    color: #a8f000;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.hero-feature small {
+    color: #e0e7df;
+    font-size: 0.72rem;
+    line-height: 1.4;
+}
+
+/* Zona de la imagen */
+.hero-art {
+    position: relative;
+    display: flex;
+    min-height: 440px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Palabra decorativa detrás de la zapatilla */
+.hero-background-word {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 100%;
+    color: transparent;
+    font-size: clamp(3rem, 7vw, 7rem);
+    font-weight: 900;
+    letter-spacing: -3px;
+    line-height: 1;
+    text-align: center;
+    -webkit-text-stroke: 1px rgba(168, 240, 0, 0.38);
+    pointer-events: none;
+}
+
+/* Imagen principal */
+.hero-product-image {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 115%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    filter: drop-shadow(0 15px 35px rgba(95, 180, 0, 0.14));
+    transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+/* Efecto al pasar el mouse */
+.hero-art:hover .hero-product-image {
+    transform: scale(1.04) translateY(-5px);
+    filter: drop-shadow(0 18px 38px rgba(135, 255, 0, 0.28));
+}
+
+/* Texto a la derecha de la imagen */
+.hero-category {
+    position: absolute;
+    z-index: 2;
+    top: 45%;
+    right: -5px;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+.hero-category span {
+    display: block;
+    width: 35px;
+    height: 2px;
+    margin-top: 8px;
+    background: #a8f000;
+}
+
+/* =========================================
+   ADAPTACIÓN PARA TABLETS Y CELULARES
+   ========================================= */
+
+@media (max-width: 991px) {
+    .hero-layout {
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding-top: 20px;
+    }
+
+    .hero-art {
+        min-height: 300px;
+    }
+
+    .hero-product-image {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .hero-category {
+        right: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    header.hero-section {
+        padding-top: 20px;
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 11vw, 3.5rem);
+    }
+
+    .hero-art {
+        min-height: 240px;
+    }
+
+    .hero-background-word {
+        font-size: 3.2rem;
+    }
+
+    .hero-category {
+        right: 0;
+        font-size: 0.65rem;
+    }
+
+    .hero-features {
+        gap: 12px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+}
+
+/* Respeta la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .hero-product-image,
+    .btn-hero-whatsapp {
+        transition: none;
+    }
+
+    .hero-art:hover .hero-product-image {
+        transform: none;
+    }
+}
+
+/* =========================================================
+   6. ELEMENTO GRÁFICO DE LA PORTADA
+   Formas decorativas y textos que aparecen a la derecha.
+   ========================================================= */
+
+/* Contenedor de la ilustración decorativa */
+.hero-visual {
+    position: relative;
+    min-height: 340px;
+    border-radius: 28px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #d8e4dc, #8ea8a2);
+    color: #17252f;
+
+    /* Centra los elementos internos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Controla el orden de las capas decorativas */
+    isolation: isolate;
+}
+
+/* Círculo verde de la esquina superior derecha */
+.hero-visual::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: var(--accent);
+    right: -55px;
+    top: -95px;
+    opacity: .95;
+    z-index: -1;
+}
+
+/* Círculo decorativo de la esquina inferior izquierda */
+.hero-visual::after {
+    content: '';
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border: 1px solid rgb(23 37 47 / 25%);
+    border-radius: 50%;
+    left: -75px;
+    bottom: -140px;
+    z-index: -1;
+}
+
+/* Etiqueta pequeña dentro de la ilustración */
+.hero-visual-label {
+    position: absolute;
+    left: 25px;
+    top: 24px;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .15em;
+}
+
+/* Texto grande decorativo de la portada */
+.hero-shoe {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    line-height: .95;
+    font-weight: 800;
+    letter-spacing: -.07em;
+    transform: rotate(-8deg);
+    text-align: center;
+    text-shadow: 0 8px 25px rgb(23 37 47 / 8%);
+}
+
+/* Color de una parte del texto decorativo */
+.hero-shoe span {
+    color: #496a61;
+}
+
+/* Órbitas o líneas circulares decorativas */
+.hero-orbit {
+    position: absolute;
+    border: 1px solid rgb(23 37 47 / 22%);
+    border-radius: 50%;
+    transform: rotate(-28deg);
+}
+
+/* Primera órbita */
+.orbit-one {
+    width: 390px;
+    height: 110px;
+}
+
+/* Segunda órbita */
+.orbit-two {
+    width: 440px;
+    height: 150px;
+}
+
+/* Etiquetas blancas flotantes */
+.hero-chip {
+    position: absolute;
+    background: #fff;
+    padding: .55rem .8rem;
+    border-radius: 8px;
+    font-size: .65rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    box-shadow: 0 8px 22px rgb(23 37 47 / 10%);
+}
+
+/* Posición de la etiqueta superior */
+.chip-top {
+    right: 20px;
+    top: 105px;
+    transform: rotate(5deg);
+}
+
+/* Posición de la etiqueta inferior */
+.chip-bottom {
+    left: 22px;
+    bottom: 26px;
+    transform: rotate(-4deg);
+}
+
+
+/* =========================================================
+   7. FRANJA DE BENEFICIOS
+   Muestra ventajas o características del catálogo.
+   ========================================================= */
+
+.benefits-strip {
+    padding: 1.25rem 0;
+    border-bottom: 1px solid #edf0eb;
+    background: #fff;
+}
+
+/* Alineación de cada beneficio */
+.benefits-strip .col-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    color: #52636a;
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+/* Iconos de los beneficios */
+.benefit-icon {
+    color: #7ca52f;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   8. TÍTULOS DE LAS SECCIONES
+   Estilos compartidos por los encabezados del catálogo.
+   ========================================================= */
+
+/* Texto pequeño que precede al título */
+.section-kicker {
+    color: #71972e;
+}
+
+/* Título principal de cada sección */
+.section-title {
+    color: var(--ink);
+    font-size: clamp(1.8rem, 3vw, 2.45rem);
+    font-weight: 800;
+    letter-spacing: -.055em;
+}
+
+
+/* =========================================================
+   9. BUSCADOR Y FILTROS DEL CATÁLOGO
+   Controla la búsqueda y selección de categorías.
+   ========================================================= */
+
+/* Ancho máximo del área de búsqueda */
+.catalog-controls {
+    width: 100%;
+    max-width: 470px;
+}
+
+/* Campos de búsqueda y listas desplegables */
+.catalog-controls .form-control,
+.catalog-controls .form-select {
+    min-height: 46px;
+    border-color: #dfe5e1;
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   10. TARJETAS DE PRODUCTOS
+   Diseño de cada producto que aparece en el catálogo.
+   ========================================================= */
+
+/* Tarjeta completa del producto */
+.product-card {
+    height: 100%;
+    border: 1px solid #e7ebe7;
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+
+    /* Transición suave al interactuar */
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta */
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgb(23 37 47 / 9%);
+}
+
+
+/* =========================================================
+   11. IMÁGENES DE LOS PRODUCTOS
+   Controla el espacio y la forma de las fotografías.
+   ========================================================= */
+
+/* Contenedor de la fotografía */
+.product-image-wrap {
+    height: 220px;
+    background: #f0f3ef;
+    overflow: hidden;
+}
+
+/* Imagen del producto */
+.product-image {
+    width: 100%;
+    height: 100%;
+
+    /* Recorta la imagen para llenar el espacio */
+    object-fit: cover;
+
+    /* Suaviza el efecto de acercamiento */
+    transition: transform .3s ease;
+}
+
+/* Acercamiento de la imagen al pasar el mouse */
+.product-card:hover .product-image {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   12. MARCADOR DE IMAGEN FALTANTE
+   Se muestra cuando todavía no hay una fotografía cargada.
+   ========================================================= */
+
+/* Fondo y alineación del marcador */
+.product-placeholder {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+    color: #8b9994;
+    font-size: .82rem;
+    background: linear-gradient(135deg, #edf1ec, #e1e8e1);
+}
+
+/* Icono del marcador */
+.placeholder-icon {
+    font-size: 3rem;
+    line-height: 1;
+    color: #a7b6ac;
+}
+
+
+/* =========================================================
+   13. INFORMACIÓN DEL PRODUCTO
+   Categoría, nombre, descripción y precio.
+   ========================================================= */
+
+/* Espaciado interno de la tarjeta */
+.product-card .card-body {
+    padding: 1.15rem;
+}
+
+/* Nombre de la categoría del producto */
+.product-category {
+    color: #71972e;
+    text-transform: uppercase;
+    font-size: .69rem;
+    letter-spacing: .12em;
+    font-weight: 800;
+}
+
+/* Nombre del producto */
+.product-name {
+    color: var(--ink);
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+/* Descripción del producto */
+.product-description {
+    color: var(--muted);
+    font-size: .88rem;
+    min-height: 2.7rem;
+}
+
+/* Precio del producto */
+.product-price {
+    color: var(--ink);
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   14. BOTÓN DE CONSULTA POR WHATSAPP
+   Estilo del botón que permite consultar cada producto.
+   ========================================================= */
+
+/* Color normal del botón */
+.btn-whatsapp {
+    background: #1f9d68;
+    color: white;
+    border: 1px solid #1f9d68;
+    font-weight: 700;
+}
+
+/* Color del botón al pasar el mouse */
+.btn-whatsapp:hover {
+    background: #187c52;
+    color: white;
+    border-color: #187c52;
+}
+
+
+/* =========================================================
+   15. AVISO DE DEMOSTRACIÓN
+   Texto que aclara que los productos son de ejemplo.
+   ========================================================= */
+
+.demo-disclaimer {
+    color: #89958f;
+    font-size: .78rem;
+}
+
+
+/* =========================================================
+   16. SECCIÓN "NOSOTROS"
+   Fondo y tarjeta informativa de la empresa.
+   ========================================================= */
+
+/* Fondo de la sección */
+.about-section {
+    background: var(--paper);
+}
+
+/* Tarjeta que contiene la información */
+.about-card {
+    border-radius: 18px;
+    background: #e5efdc;
+    padding: 2rem;
+}
+
+/* Cuadro con símbolo o icono */
+.about-card-symbol {
+    display: inline-grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    background: var(--accent);
+    border-radius: 12px;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+/* Texto de la tarjeta informativa */
+.about-card p {
+    color: #5c6e65;
+}
+
+
+/* =========================================================
+   17. SECCIÓN DE CONTACTO
+   Fondo del área de contacto.
+   ========================================================= */
+
+.contact-section {
+    background: #fff;
+}
+
+
+/* =========================================================
+   18. PIE DE PÁGINA (FOOTER)
+   Parte inferior de la página web.
+   ========================================================= */
+
+/* Fondo y color general del pie de página */
+.site-footer {
+    background: #17252f;
+    color: #d0d9da;
+    font-size: .86rem;
+}
+
+/* Enlaces del pie de página */
+.site-footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   19. DISEÑO PARA CELULARES Y PANTALLAS PEQUEÑAS
+   Estas reglas se activan en pantallas menores a 768 px.
+   ========================================================= */
+
+@media (max-width: 767.98px) {
+
+    /* Reduce el tamaño del título de la portada */
+    .hero-section h1 {
+        font-size: 2.65rem;
+    }
+
+    /* Reduce la altura de la ilustración */
+    .hero-visual {
+        min-height: 270px;
+    }
+
+    /* Coloca los beneficios en vertical */
+    .benefits-strip .col-4 {
+        flex-direction: column;
+        gap: .25rem;
+        font-size: .67rem;
+    }
+
+    /* Reduce la altura de las imágenes en celulares */
+    .product-image-wrap {
+        height: 190px;
+    }
+}
+
+
+/* ==========================================================
+   MEJORA VISUAL 1: ACABADO PROFESIONAL DEL CATÁLOGO
+   Estas reglas complementan los estilos existentes.
+   Se agregan al final de style.css.
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   1. NAVEGACIÓN
+   Mejora la interacción con el menú superior.
+   ---------------------------------------------------------- */
+
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 18px rgb(23 37 47 / 10%);
+}
+
+.nav-link {
+    transition: color .2s ease, opacity .2s ease;
+}
+
+.nav-link:hover {
+    opacity: .85;
+}
+
+/* Evita que el menú tape los títulos al saltar a una sección. */
+#inicio,
+#catalogo,
+#nosotros,
+#contacto {
+    scroll-margin-top: 95px;
+}
+
+
+/* ----------------------------------------------------------
+   2. PORTADA
+   Añade profundidad y mejora la lectura del contenido.
+   ---------------------------------------------------------- */
+
+.hero-section {
+    position: relative;
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgb(201 243 107 / 10%),
+            transparent 32%
+        ),
+        linear-gradient(
+            125deg,
+            #14232d 0%,
+            #203941 65%,
+            #304b4d 100%
+        );
+}
+
+/* Hace que el título destaque más. */
+.hero-section h1 {
+    text-wrap: balance;
+}
+
+/* Mejora la legibilidad del texto de la portada. */
+.hero-copy {
+    line-height: 1.8;
+}
+
+/* Efecto de movimiento del botón principal. */
+.btn-accent {
+    border-radius: 10px;
+    box-shadow: 0 8px 22px rgb(201 243 107 / 15%);
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+.btn-accent:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgb(201 243 107 / 25%);
+}
+
+
+/* ----------------------------------------------------------
+   3. ILUSTRACIÓN DE LA PORTADA
+   Mejora el acabado de la composición actual.
+   ---------------------------------------------------------- */
+
+.hero-visual {
+    box-shadow: 0 22px 55px rgb(0 0 0 / 15%);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.hero-visual:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 65px rgb(0 0 0 / 20%);
+}
+
+/* Las etiquetas flotantes destacan un poco más. */
+.hero-chip {
+    box-shadow: 0 10px 25px rgb(23 37 47 / 15%);
+}
+
+
+/* ----------------------------------------------------------
+   4. FRANJA DE BENEFICIOS
+   Separa mejor esta sección de la portada.
+   ---------------------------------------------------------- */
+
+.benefits-strip {
+    box-shadow: 0 5px 18px rgb(23 37 47 / 3%);
+}
+
+.benefits-strip .col-4 {
+    padding: .25rem .5rem;
+}
+
+
+/* ----------------------------------------------------------
+   5. TÍTULOS Y ESPACIADO
+   Mejora la jerarquía visual de las secciones.
+   ---------------------------------------------------------- */
+
+.section-title {
+    line-height: 1.2;
+    text-wrap: balance;
+}
+
+.section-kicker {
+    margin-bottom: .65rem;
+}
+
+
+/* ----------------------------------------------------------
+   6. BUSCADOR Y FILTROS
+   Campos más cómodos y con un estado de enfoque claro.
+   ---------------------------------------------------------- */
+
+.catalog-controls .form-control,
+.catalog-controls .form-select {
+    background-color: #fff;
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.catalog-controls .form-control:focus,
+.catalog-controls .form-select:focus {
+    border-color: #a9d84a;
+    box-shadow: 0 0 0 .2rem rgb(201 243 107 / 25%);
+    outline: none;
+}
+
+
+/* ----------------------------------------------------------
+   7. TARJETAS DE PRODUCTOS
+   Bordes, sombras y movimiento más elegantes.
+   ---------------------------------------------------------- */
+
+.product-card {
+    border-color: #e5eae5;
+    border-radius: 18px;
+    box-shadow: 0 4px 14px rgb(23 37 47 / 3%);
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    border-color: #d7e6c6;
+    box-shadow: 0 18px 38px rgb(23 37 47 / 11%);
+}
+
+
+/* ----------------------------------------------------------
+   8. FOTOGRAFÍAS
+   Suaviza el acercamiento de las imágenes.
+   ---------------------------------------------------------- */
+
+.product-image-wrap {
+    position: relative;
+    background: #f3f5f1;
+}
+
+.product-image {
+    transition: transform .45s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.06);
+}
+
+
+/* ----------------------------------------------------------
+   9. INFORMACIÓN DEL PRODUCTO
+   Mejora la lectura de nombres, descripciones y precios.
+   ---------------------------------------------------------- */
+
+.product-card .card-body {
+    padding: 1.25rem;
+}
+
+.product-name {
+    font-size: 1rem;
+    line-height: 1.45;
+}
+
+.product-description {
+    line-height: 1.65;
+}
+
+.product-price {
+    font-size: 1.25rem;
+    letter-spacing: -.02em;
+}
+
+
+/* ----------------------------------------------------------
+   10. BOTÓN DE WHATSAPP
+   Mayor comodidad visual y respuesta al interactuar.
+   ---------------------------------------------------------- */
+
+.btn-whatsapp {
+    border-radius: 9px;
+    padding: .7rem .8rem;
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgb(31 157 104 / 20%);
+}
+
+
+/* ----------------------------------------------------------
+   11. SECCIÓN NOSOTROS
+   Añade profundidad a la tarjeta informativa.
+   ---------------------------------------------------------- */
+
+.about-card {
+    border: 1px solid rgb(169 216 74 / 20%);
+    box-shadow: 0 12px 30px rgb(23 37 47 / 4%);
+}
+
+
+/* ----------------------------------------------------------
+   12. CONTACTO Y PIE DE PÁGINA
+   Mejora la separación entre las secciones.
+   ---------------------------------------------------------- */
+
+.contact-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.site-footer {
+    border-top: 1px solid rgb(255 255 255 / 8%);
+}
+
+.site-footer a {
+    transition: color .2s ease;
+}
+
+.site-footer a:hover {
+    color: #fff;
+}
+
+
+/* ----------------------------------------------------------
+   13. AJUSTES PARA CELULARES
+   Reduce los efectos y mejora la distribución.
+   ---------------------------------------------------------- */
+
+@media (max-width: 767.98px) {
+
+    .hero-section {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .hero-copy {
+        font-size: 1rem;
+    }
+
+    .hero-visual {
+        border-radius: 20px;
+    }
+
+    .product-card .card-body {
+        padding: 1rem;
+    }
+
+    .product-card:hover {
+        transform: translateY(-2px);
+    }
+}
+
+
+/* ----------------------------------------------------------
+   14. ACCESIBILIDAD
+   Reduce las animaciones si el usuario lo prefiere.
+   ---------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+/* =========================================
+   PORTADA CON FONDO CLARO
+   ========================================= */
+
+header.hero-section {
+    background: #F4F6F8;
+    color: #17252F;
+}
+
+/* Título principal */
+header.hero-section h1 {
+    color: #17252F;
+}
+
+/* Palabra destacada en verde */
+header.hero-section h1 span {
+    color: #659900;
+}
+
+/* Texto descriptivo */
+header.hero-section .hero-copy {
+    color: #4B5964;
+}
+
+/* Texto pequeño de la portada */
+header.hero-section .hero-eyebrow {
+    color: #527D00;
+}
+
+/* Nota de demostración */
+header.hero-section .demo-note {
+    color: #667580;
+}
+
+/* Fotografía: conserva sus colores naturales */
+.hero-photo-image {
+    filter: none;
+}
+
+/* La sombra ayuda a separar la imagen del fondo */
+.hero-photo {
+    box-shadow: 0 20px 45px rgba(23, 37, 47, 0.18);
+}
+
+
+/* =========================================
+   CORRECCIÓN DE CONTRASTE DE LA PORTADA
+   ========================================= */
+
+/* Fondo negro con iluminación verde */
+header.hero-section {
+    background:
+        radial-gradient(
+            ellipse at 72% 50%,
+            rgba(65, 180, 0, 0.22),
+            transparent 45%
+        ),
+        linear-gradient(110deg, #030705, #071108 70%, #020402) !important;
+    color: #ffffff;
+}
+
+/* Título blanco */
+header.hero-section .hero-title {
+    color: #ffffff !important;
+}
+
+/* Palabra destacada */
+header.hero-section .hero-title span {
+    color: #A8F000 !important;
+}
+
+/* Texto descriptivo */
+header.hero-section .hero-copy {
+    color: #E1E8E0 !important;
+}
+
+/* Etiqueta de colección */
+header.hero-section .hero-badge {
+    color: #C6F36B !important;
+    border-color: #A8F000;
+}
+
+/* Botón principal: verde intenso y texto oscuro */
+header.hero-section .hero-actions .btn-accent {
+    background: #A8F000 !important;
+    border-color: #A8F000 !important;
+    color: #10180A !important;
+    font-weight: 800;
+}
+
+/* Botón WhatsApp: fondo oscuro y texto verde */
+header.hero-section .btn-hero-whatsapp {
+    background: #102015 !important;
+    border: 1px solid #A8F000 !important;
+    color: #D9FFA0 !important;
+    font-weight: 700;
+}
+
+/* Al pasar el mouse por WhatsApp */
+header.hero-section .btn-hero-whatsapp:hover {
+    background: #A8F000 !important;
+    color: #10180A !important;
+}
+
+/* Beneficios: texto visible */
+header.hero-section .hero-feature small {
+    color: #E1E8E0 !important;
+}
+
+header.hero-section .hero-feature > span {
+    color: #A8F000 !important;
+}
+
+/* Texto decorativo detrás de la imagen */
+header.hero-section .hero-background-word {
+    -webkit-text-stroke-color: rgba(168, 240, 0, 0.45);
+}
+
+/* Etiqueta de categorías */
+header.hero-section .hero-category {
+    color: #FFFFFF !important;
+}
+
+/* Efecto de la imagen al pasar el mouse */
+header.hero-section .hero-product-image {
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+header.hero-section .hero-art:hover .hero-product-image {
+    transform: scale(1.04) translateY(-5px);
+    filter: drop-shadow(0 18px 35px rgba(135, 255, 0, 0.3));
+}
+
+/* En celulares, evitar animaciones si el usuario las desactiva */
+@media (prefers-reduced-motion: reduce) {
+    header.hero-section .hero-product-image {
+        transition: none;
+    }
+
+    header.hero-section .hero-art:hover .hero-product-image {
+        transform: none;
+    }
+}
+
+
+/* =========================================
+   INTEGRAR LA IMAGEN CON EL FONDO NEGRO
+   ========================================= */
+
+header.hero-section .hero-art {
+    position: relative;
+    isolation: isolate;
+    background: transparent;
+}
+
+/* Recuperar el color original de la fotografía */
+header.hero-section .hero-product-image {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 115%;
+    max-width: none;
+    height: auto;
+    border-radius: 0;
+    mix-blend-mode: normal;
+    filter: none;
+
+    /* Suavizar los bordes superior, inferior y laterales */
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 90%,
+        transparent 100%
+    ),
+    linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 7%,
+        black 92%,
+        transparent 100%
+    );
+
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 90%,
+        transparent 100%
+    );
+    mask-mode: alpha;
+    transition: transform 0.4s ease;
+}
+
+/* Efecto de acercamiento */
+header.hero-section .hero-art:hover .hero-product-image {
+    transform: scale(1.035) translateY(-3px);
+}
+
+/* Resplandor detrás de la imagen */
+header.hero-section .hero-art::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    inset: 12% 8%;
+    border-radius: 50%;
+    background: rgba(65, 180, 0, 0.12);
+    filter: blur(65px);
+    pointer-events: none;
+}
+
+/* En pantallas pequeñas, evitar que la imagen se desborde */
+@media (max-width: 991px) {
+    header.hero-section .hero-product-image {
+        width: 100%;
+        max-width: 700px;
+    }
+}
+
+
+/* =========================================
+   MEJORA DE TEXTOS EN LAS TARJETAS
+   ========================================= */
+
+/* Nombre del producto */
+.product-card h3,
+.product-card .product-title,
+.product-card .card-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.4;
+    color: #17252F;
+    margin-bottom: 10px;
+}
+
+/* Descripción del producto */
+.product-card p,
+.product-card .product-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #53616C;
+}
+
+/* Categoría: ZAPATILLAS o RELOJES */
+.product-card .product-category,
+.product-card .category-label {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+/* Precio */
+.product-card .product-price,
+.product-card .price {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #17252F;
+}
+
+/* Botón de WhatsApp */
+.product-card .btn-whatsapp {
+    font-size: 1rem;
+    font-weight: 750;
+    padding: 13px 10px;
+}
+
+/* Un poco más de espacio entre los textos */
+.product-card .card-body {
+    padding: 20px;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 576px) {
+    .product-card h3,
+    .product-card .product-title,
+    .product-card .card-title {
+        font-size: 1.15rem;
+    }
+
+    .product-card p,
+    .product-card .product-description {
+        font-size: 0.98rem;
+    }
+}
+
+
+/* =========================================
+   MEJORA VISUAL DE LAS TARJETAS
+   ========================================= */
+
+/* Tarjeta completa */
+.product-card {
+    overflow: hidden;
+    border: 1px solid #E3E9E5;
+    border-radius: 20px;
+    background: #FFFFFF;
+    box-shadow: 0 5px 18px rgba(20, 35, 28, 0.04);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* Elevación al pasar el mouse */
+.product-card:hover {
+    transform: translateY(-6px);
+    border-color: #B9E96A;
+    box-shadow: 0 16px 35px rgba(20, 35, 28, 0.12);
+}
+
+/* Imagen del producto */
+.product-card .product-image,
+.product-card img {
+    transition: transform 0.4s ease;
+}
+
+/* Zoom suave de la fotografía */
+.product-card:hover .product-image,
+.product-card:hover img {
+    transform: scale(1.045);
+}
+
+/* Evita que el zoom se salga de su espacio */
+.product-card .product-image-wrap {
+    overflow: hidden;
+}
+
+/* Transiciones accesibles */
+@media (prefers-reduced-motion: reduce) {
+    .product-card,
+    .product-card img,
+    .product-card .product-image {
+        transition: none;
+    }
+
+    .product-card:hover {
+        transform: none;
+    }
+
+    .product-card:hover img,
+    .product-card:hover .product-image {
+        transform: none;
+    }
+}
+
+
+/* =========================================
+   BOTONES DE WHATSAPP DEL CATÁLOGO
+   ========================================= */
+
+/* Estilo de los botones de los productos */
+.product-card .btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid #159447;
+    border-radius: 10px;
+    background: #159447;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 750;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Efecto al pasar el mouse */
+.product-card .btn-whatsapp:hover {
+    background: #A8F000;
+    border-color: #A8F000;
+    color: #14252F;
+    transform: translateY(-2px);
+}
+
+/* Efecto al pulsar */
+.product-card .btn-whatsapp:active {
+    transform: scale(0.98);
+}
+
+/* Accesibilidad: foco visible con teclado */
+.product-card .btn-whatsapp:focus-visible {
+    outline: 3px solid #A8F000;
+    outline-offset: 3px;
+}
+
+
+/* =========================================
+   BUSCADOR Y FILTRO DE CATEGORÍAS
+   ========================================= */
+
+.catalog-controls .form-control,
+.catalog-controls .form-select {
+    min-height: 48px;
+    border: 1px solid #D7E0DA;
+    border-radius: 11px;
+    background-color: #FFFFFF;
+    color: #17252F;
+    font-size: 0.98rem;
+    box-shadow: none;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Color del texto de ayuda */
+.catalog-controls .form-control::placeholder {
+    color: #75818A;
+}
+
+/* Resaltar el control seleccionado */
+.catalog-controls .form-control:focus,
+.catalog-controls .form-select:focus {
+    border-color: #77B900;
+    box-shadow: 0 0 0 3px rgba(168, 240, 0, 0.18);
+    outline: none;
+}
+
+/* Ajuste en pantallas pequeñas */
+@media (max-width: 575px) {
+    .catalog-controls {
+        width: 100%;
+    }
+
+    .catalog-controls .form-control,
+    .catalog-controls .form-select {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   FRANJA DE BENEFICIOS
+   ========================================= */
+
+.benefits-strip {
+    position: relative;
+    padding: 24px 0;
+    background: #FFFFFF;
+    border-top: 1px solid #E8EDE8;
+    border-bottom: 1px solid #E8EDE8;
+}
+
+/* Distribución de los beneficios */
+.benefits-strip .row > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #24333D;
+    font-size: 0.95rem;
+    font-weight: 650;
+}
+
+/* Iconos verdes */
+.benefits-strip .benefit-icon {
+    color: #659900;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+/* Separadores discretos en pantallas grandes */
+@media (min-width: 768px) {
+    .benefits-strip .row > div:not(:last-child) {
+        border-right: 1px solid #E5EAE5;
+    }
+}
+
+/* Adaptación a celulares */
+@media (max-width: 575px) {
+    .benefits-strip {
+        padding: 18px 0;
+    }
+
+    .benefits-strip .row > div {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 0.75rem;
+        text-align: center;
+    }
+}
+
+
+/* =========================================
+   SECCIÓN NOSOTROS
+   ========================================= */
+
+.about-section {
+    position: relative;
+    overflow: hidden;
+    background: #F4F7F4;
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}
+
+/* Pequeño resplandor decorativo */
+.about-section::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    right: -80px;
+    border-radius: 50%;
+    background: rgba(168, 240, 0, 0.12);
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.about-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.about-section .section-kicker {
+    color: #659900;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.about-section .section-title {
+    color: #17252F;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 850;
+    line-height: 1.15;
+}
+
+.about-section p.text-secondary {
+    color: #53616C !important;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* Tarjeta informativa */
+.about-section .about-card {
+    padding: 32px;
+    border: 1px solid #E0E8DF;
+    border-radius: 20px;
+    background: #FFFFFF;
+    box-shadow: 0 12px 35px rgba(20, 35, 28, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-section .about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(20, 35, 28, 0.12);
+}
+
+.about-section .about-card-symbol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    background: #A8F000;
+    color: #17252F;
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+.about-section .about-card h3 {
+    color: #17252F;
+    font-size: 1.3rem;
+}
+
+.about-section .about-card p {
+    color: #53616C;
+    line-height: 1.7;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-section .about-card {
+        transition: none;
+    }
+
+    .about-section .about-card:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================
+   SECCIÓN CONTACTO
+   ========================================= */
+
+.contact-section {
+    position: relative;
+    overflow: hidden;
+    background: #07100A;
+    padding-top: 75px !important;
+    padding-bottom: 75px !important;
+}
+
+.contact-section .section-kicker {
+    color: #B9F34A;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.contact-section .section-title {
+    color: #FFFFFF;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 850;
+}
+
+.contact-section p.text-secondary {
+    color: #D1D9D1 !important;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Botón principal de contacto */
+.contact-section .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 14px 26px;
+    border: 1px solid #A8F000;
+    border-radius: 11px;
+    background: #A8F000;
+    color: #10180A;
+    font-size: 1rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.contact-section .btn-whatsapp:hover {
+    transform: translateY(-3px);
+    background: #C4FF46;
+    border-color: #C4FF46;
+    color: #10180A;
+}
+
+
+/* =========================================
+   PIE DE PÁGINA
+   ========================================= */
+
+.site-footer {
+    background: #030705;
+    border-top: 1px solid rgba(168, 240, 0, 0.2);
+    color: #D7DFD7;
+}
+
+.site-footer p {
+    font-size: 0.9rem;
+}
+
+.site-footer a {
+    color: #B9F34A;
+    font-weight: 650;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   ACABADO FINAL DEL PIE DE PÁGINA
+   ========================================= */
+
+.site-footer {
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+    background: #030705;
+    border-top: 1px solid rgba(168, 240, 0, 0.35);
+}
+
+.site-footer .container {
+    align-items: center;
+}
+
+.site-footer p {
+    color: #D7DFD7;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.site-footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #B9F34A;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.site-footer a:hover {
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+    .site-footer .container {
+        text-align: center;
+        align-items: center;
+    }
+}
+
+
+/* =========================================
+   BOTÓN FLOTANTE DE WHATSAPP
+   ========================================= */
+
+.whatsapp-flotante {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border: 2px solid #A8F000;
+    border-radius: 50px;
+    background: #101B14;
+    color: #D5FF83;
+    font-size: 0.95rem;
+    font-weight: 750;
+    text-decoration: none;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.whatsapp-flotante:hover {
+    transform: translateY(-4px);
+    background: #A8F000;
+    color: #101B14;
+}
+
+.whatsapp-flotante-icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #A8F000;
+    color: #101B14;
+    font-size: 1.2rem;
+}
+
+.whatsapp-flotante:hover .whatsapp-flotante-icono {
+    background: #101B14;
+    color: #A8F000;
+}
+
+@media (max-width: 576px) {
+    .whatsapp-flotante {
+        right: 14px;
+        bottom: 14px;
+        padding: 10px 13px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-flotante {
+        transition: none;
+    }
+}
+
+
+/* =========================================
+   NUEVA PRESENTACIÓN DE NOSOTROS
+   ========================================= */
+
+.about-section .section-title span {
+    display: block;
+    color: #659900;
+}
+
+.about-section .about-description {
+    color: #53616C;
+    font-size: 1.08rem;
+    line-height: 1.85;
+}
+
+.about-section .about-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.about-section .about-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 22px;
+    border: 1px solid #E0E8DF;
+    border-radius: 16px;
+    background: #FFFFFF;
+    box-shadow: 0 8px 24px rgba(20, 35, 28, 0.04);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.about-section .about-benefit:hover {
+    transform: translateX(5px);
+    border-color: #A8F000;
+}
+
+.about-section .about-benefit-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    background: #A8F000;
+    color: #142015;
+    font-size: 0.95rem;
+    font-weight: 850;
+}
+
+.about-section .about-benefit h3 {
+    margin: 0 0 7px;
+    color: #17252F;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.about-section .about-benefit p {
+    margin: 0;
+    color: #53616C;
+    font-size: 0.98rem;
+    line-height: 1.65;
+}
+
+@media (max-width: 576px) {
+    .about-section .about-benefit {
+        padding: 18px;
+        gap: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-section .about-benefit {
+        transition: none;
+    }
+
+    .about-section .about-benefit:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================
+   CORRECCIÓN VISUAL DE CONTACTO
+   ========================================= */
+
+.contact-section {
+    background:
+        radial-gradient(ellipse at 10% 20%,
+        rgba(168, 240, 0, 0.08), transparent 45%),
+        #080C0A;
+    color: #FFFFFF;
+}
+
+.contact-section .contact-kicker {
+    color: #A8F000;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.contact-section .contact-title {
+    color: #FFFFFF;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.contact-section .contact-title span {
+    display: block;
+    color: #A8F000;
+}
+
+.contact-section .contact-description {
+    color: #C1CBC5;
+    line-height: 1.8;
+}
+
+.contact-section .contact-info-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 14px;
+    padding: 20px;
+    border: 1px solid #303A33;
+    border-radius: 17px;
+    background: #111713;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.contact-section a.contact-info-card:hover {
+    border-color: #A8F000;
+    background: #182019;
+}
+
+.contact-section .contact-info-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #202B1B;
+    color: #A8F000;
+}
+
+.contact-section .contact-info-text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-section .contact-info-text small {
+    color: #A8F000;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.contact-section .contact-info-text strong {
+    color: #FFFFFF;
+}
+
+.contact-section .contact-info-text > span {
+    color: #B8C3BB;
+    font-size: 0.88rem;
+}
+
+.contact-section .contact-arrow {
+    color: #A8F000;
+    font-size: 1.4rem;
+}
+
+.contact-section .contact-note {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+    padding: 18px;
+    border: 1px solid #303A33;
+    border-radius: 16px;
+    background: #151B17;
+}
+
+.contact-section .contact-note > span {
+    color: #A8F000;
+}
+
+.contact-section .contact-note p {
+    margin: 0;
+    color: #C1CBC5;
+    line-height: 1.7;
+}
+
+.contact-section .contact-form-card {
+    padding: clamp(22px, 4vw, 40px);
+    border: 1px solid #303A33;
+    border-radius: 24px;
+    background: #151B17;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.22);
+}
+
+.contact-section .contact-form-heading {
+    margin-bottom: 28px;
+}
+
+.contact-section .contact-form-heading h3 {
+    color: #FFFFFF;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 850;
+}
+
+.contact-section .contact-form-heading > p:last-child {
+    color: #B8C3BB;
+}
+
+.contact-section .contact-form-card label {
+    display: block;
+    margin-bottom: 8px;
+    color: #E5ECE6;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.contact-section .contact-form-card .form-control,
+.contact-section .contact-form-card .form-select {
+    min-height: 51px;
+    padding: 12px 15px;
+    border: 1px solid #39443D;
+    border-radius: 12px;
+    background-color: #202622;
+    color: #FFFFFF;
+    box-shadow: none;
+}
+
+.contact-section .contact-form-card textarea.form-control {
+    min-height: 120px;
+}
+
+.contact-section .contact-form-card .form-control::placeholder {
+    color: #A0AAA2;
+}
+
+.contact-section .contact-form-card .form-control:focus,
+.contact-section .contact-form-card .form-select:focus {
+    border-color: #A8F000;
+    box-shadow: 0 0 0 3px rgba(168, 240, 0, 0.12);
+}
+
+.contact-section .contact-form-card .form-select option {
+    background: #202622;
+    color: #FFFFFF;
+}
+
+.contact-section .contact-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 56px;
+    margin-top: 10px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 50px;
+    background: #A8F000;
+    color: #10170B;
+    font-size: 1rem;
+    font-weight: 850;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.contact-section .contact-submit:hover {
+    background: #C4FF49;
+    transform: translateY(-2px);
+}
+
+.contact-section .contact-form-legal {
+    margin-top: 13px;
+    color: #A0AAA2;
+    font-size: 0.78rem;
+    text-align: center;
+}
+
+.contact-section .contact-result {
+    padding: 14px;
+    border: 1px solid #526D24;
+    border-radius: 12px;
+    color: #D5FF83;
+    line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+    .contact-section .contact-info-card {
+        padding: 16px;
+    }
+}
+
+
+/* =========================================
+   FOOTER PROFESIONAL DEL CATÁLOGO DEMO
+   ========================================= */
+
+.footer-demo {
+    position: relative;
+    padding: 55px 0 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(168, 240, 0, 0.35);
+    background:
+        radial-gradient(
+            ellipse at 15% 0%,
+            rgba(168, 240, 0, 0.055),
+            transparent 42%
+        ),
+        #080C0A;
+    color: #FFFFFF;
+}
+
+.footer-demo .footer-principal {
+    padding-bottom: 42px;
+}
+
+.footer-demo .footer-marca {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #FFFFFF;
+    font-size: 1.15rem;
+    font-weight: 850;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.footer-demo .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    background: #A8F000;
+    color: #10170B;
+    font-size: 1.15rem;
+    font-weight: 900;
+}
+
+.footer-demo .footer-marca-secundaria {
+    color: #AAB6AE;
+    font-weight: 500;
+}
+
+.footer-demo .footer-eslogan {
+    margin: 17px 0 10px;
+    color: #A8F000;
+    font-size: 0.95rem;
+    font-weight: 750;
+}
+
+.footer-demo .footer-descripcion {
+    max-width: 380px;
+    margin: 0;
+    color: #AAB6AE;
+    font-size: 0.92rem;
+    line-height: 1.8;
+}
+
+.footer-demo .footer-titulo {
+    margin: 8px 0 20px;
+    color: #A8F000;
+    font-size: 0.78rem;
+    font-weight: 850;
+    letter-spacing: 2px;
+}
+
+.footer-demo .footer-enlaces {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-demo .footer-enlaces a {
+    display: inline-block;
+    color: #C1CBC5;
+    font-size: 0.93rem;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-demo .footer-enlaces a:hover {
+    color: #A8F000;
+    transform: translateX(3px);
+}
+
+.footer-demo .footer-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 23px;
+    padding: 11px 16px;
+    border: 1px solid #526D24;
+    border-radius: 30px;
+    color: #D5FF83;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.footer-demo .footer-boton:hover {
+    background: #A8F000;
+    color: #10170B;
+}
+
+.footer-demo .footer-boton span {
+    font-size: 1.15rem;
+}
+
+.footer-demo .footer-inferior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 23px 0;
+    border-top: 1px solid #29332D;
+}
+
+.footer-demo .footer-copyright {
+    margin: 0 0 5px;
+    color: #C1CBC5;
+    font-size: 0.83rem;
+}
+
+.footer-demo .footer-demo-nota {
+    margin: 0;
+    color: #7F8D83;
+    font-size: 0.78rem;
+}
+
+.footer-demo .footer-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #A8F000;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.footer-demo .footer-volver:hover {
+    color: #D5FF83;
+}
+
+.footer-demo .footer-volver span {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 767px) {
+    .footer-demo {
+        padding-top: 38px;
+    }
+
+    .footer-demo .footer-principal {
+        padding-bottom: 30px;
+    }
+
+    .footer-demo .footer-inferior {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-demo .footer-enlaces a,
+    .footer-demo .footer-boton {
+        transition: none;
+    }
+}
+

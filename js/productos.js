@@ -1,0 +1,143 @@
+/*
+  CATÁLOGO DEMO: zapatillas y relojes.
+  Nombres, precios e imágenes son ilustrativos; reemplázalos con datos autorizados del cliente.
+  Para cambiar una imagen, guarda el archivo en img/ y actualiza la propiedad imagen.
+*/
+const productos = [
+  {
+    id: 1,
+    nombre: 'Zapatillas Urbanas Classic',
+    descripcion: 'Estilo versátil para todos los días.',
+    precio: 129.90,
+    imagen: 'img/zapatillas01.jpg',
+    categoria: 'Zapatillas'
+  },
+  {
+    id: 2,
+    nombre: 'Zapatillas Running Pro',
+    descripcion: 'Diseñadas para acompañar tus entrenamientos.',
+    precio: 179.90,
+    imagen: 'img/zapatillas02.jpg',
+    categoria: 'Zapatillas'
+  },
+  {
+    id: 3,
+    nombre: 'Zapatillas Street Flex',
+    descripcion: 'Un look moderno y cómodo para salir.',
+    precio: 149.90,
+    imagen: 'img/zapatillas03.jpg',
+    categoria: 'Zapatillas'
+  },
+  {
+    id: 4,
+    nombre: 'Zapatillas Sport Light',
+    descripcion: 'Diseño ligero para tu rutina diaria.',
+    precio: 139.90,
+    imagen: 'img/zapatillas04.jpg',
+    categoria: 'Zapatillas'
+  },
+  {
+    id: 5,
+    nombre: 'Zapatillas High Top',
+    descripcion: 'Estilo urbano con caña alta.',
+    precio: 159.90,
+    imagen: 'img/zapatillas05.jpg',
+    categoria: 'Zapatillas'
+  },
+  {
+    id: 6,
+    nombre: 'Zapatillas Casual White',
+    descripcion: 'Un clásico fácil de combinar.',
+    precio: 119.90,
+    imagen: 'img/zapatillas06.jpg',
+    categoria: 'Zapatillas'
+  },
+  {
+    id: 7,
+    nombre: 'Reloj Chrono Black',
+    descripcion: 'Diseño deportivo con acabado oscuro.',
+    precio: 199.90,
+    imagen: 'img/reloj01.jpg',
+    categoria: 'Relojes'
+  },
+  {
+    id: 8,
+    nombre: 'Reloj Classic Silver',
+    descripcion: 'Estilo elegante para cualquier ocasión.',
+    precio: 229.90,
+    imagen: 'img/reloj02.jpg',
+    categoria: 'Relojes'
+  },
+  {
+    id: 9,
+    nombre: 'Reloj Minimal Brown',
+    descripcion: 'Diseño minimalista con correa marrón.',
+    precio: 189.90,
+    imagen: 'img/reloj03.jpg',
+    categoria: 'Relojes'
+  },
+  {
+    id: 10,
+    nombre: 'Reloj Sport Digital',
+    descripcion: 'Lectura práctica para el día a día.',
+    precio: 99.90,
+    imagen: 'img/reloj04.jpg',
+    categoria: 'Relojes'
+  },
+  {
+    id: 11,
+    nombre: 'Reloj Executive Blue',
+    descripcion: 'Esfera azul con estilo contemporáneo.',
+    precio: 249.90,
+    imagen: 'img/reloj05.jpg',
+    categoria: 'Relojes'
+  },
+  {
+    id: 12,
+    nombre: 'Reloj Mesh Rose',
+    descripcion: 'Malla metálica con acabado moderno.',
+    precio: 219.90,
+    imagen: 'img/reloj06.jpg',
+    categoria: 'Relojes'
+  },
+  {
+    id: 13,
+    nombre: 'Zapatillas Active Move',
+    descripcion: 'Comodidad para un estilo de vida activo.',
+    precio: 169.90,
+    imagen: 'img/zapatillas07.jpg',
+    categoria: 'Zapatillas'
+  },
+  {
+    id: 14,
+    nombre: 'Reloj Everyday Steel',
+    descripcion: 'Un diseño atemporal de acero.',
+    precio: 179.90,
+    imagen: 'img/reloj07.jpg',
+    categoria: 'Relojes'
+  },
+  {
+    id: 15,
+    nombre: 'Zapatillas Urban Color',
+    descripcion: 'Un toque de color para tu outfit.',
+    precio: 145.90,
+    imagen: 'img/zapatillas04.jpg',
+    categoria: 'Zapatillas'
+  },
+  {
+    id: 16,
+    nombre: 'Zapatillas Urban Color',
+    descripcion: 'Un toque de color para tu outfit.',
+    precio: 125.90,
+    imagen: 'img/zapatillas02.jpg',
+    categoria: 'Zapatillas'
+  }
+];
+
+const configuracionCatalogo = {
+  nombreNegocio: "Tienda Demo",
+  // Sustituir por el número real del cliente: código de país + celular, solo dígitos.
+  whatsapp: "519XXXXXXXX",
+  moneda: "S/",
+  correo: "contacto@ejemplo.com"
+};

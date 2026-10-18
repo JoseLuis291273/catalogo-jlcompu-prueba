@@ -1,0 +1,607 @@
+
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Descripción para buscadores -->
+    <meta
+        name="description"
+        content="Explora nuestro catálogo digital de zapatillas y relojes. Consulta productos por WhatsApp."
+    >
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Tienda Demo | Zapatillas y Relojes</title>
+
+    <!-- Bootstrap: estilos y diseño adaptable a celulares -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Nuestra hoja de estilos personalizada -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         1. BARRA DE NAVEGACIÓN
+         ========================================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+        <div class="container">
+
+            <!-- Nombre provisional de la tienda -->
+            <a class="navbar-brand fw-bold" href="#inicio">
+                <span class="brand-mark">T</span>
+                TIENDA
+                <span class="brand-light">DEMO</span>
+            </a>
+
+            <!-- Botón del menú para celulares -->
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal"
+                aria-expanded="false"
+                aria-label="Abrir menú"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Opciones de navegación -->
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">Catálogo</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+   
+<!-- ==========================================
+     PORTADA PRINCIPAL: ESTILO DEPORTIVO
+     ========================================== -->
+<header class="hero-section" id="inicio">
+    <div class="container">
+
+        <div class="row align-items-center g-4 hero-layout">
+
+            <!-- LADO IZQUIERDO: TEXTO Y BOTONES -->
+            <div class="col-lg-5 hero-content">
+
+                <span class="hero-badge">
+                    NUEVA COLECCIÓN
+                </span>
+
+                <h1 class="hero-title">
+                    ESTILO QUE<br>
+                    MARCA LA<br>
+                    <span>DIFERENCIA</span>
+                </h1>
+
+                <p class="hero-copy">
+                    Zapatillas y relojes para complementar tu estilo.
+                    Explora el catálogo y consulta por tu producto favorito.
+                </p>
+
+                <!-- Botones de acción -->
+                <div class="hero-actions">
+
+                    <a href="#productos" class="btn btn-accent">
+                        Explorar catálogo →
+                    </a>
+
+                    <a
+                        id="portadaWhatsApp"
+                        href="#contacto"
+                        class="btn btn-hero-whatsapp"
+                    >
+                        ◉ Consultar por WhatsApp
+                    </a>
+
+                </div>
+
+                <!-- Beneficios de la tienda -->
+                <div class="hero-features">
+
+                    <div class="hero-feature">
+                        <span>↗</span>
+                        <small>Envíos a<br>todo el Perú</small>
+                    </div>
+
+                    <div class="hero-feature">
+                        <span>✓</span>
+                        <small>Productos<br>seleccionados</small>
+                    </div>
+
+                    <div class="hero-feature">
+                        <span>♧</span>
+                        <small>Atención<br>personalizada</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LADO DERECHO: ZAPATILLA Y RELOJES -->
+            <div class="col-lg-7 hero-art">
+
+                <!-- Texto decorativo detrás de la imagen -->
+                <div class="hero-background-word" aria-hidden="true">
+                    SNEAKERS
+                </div>
+
+                <!-- Imagen generada que guardaste en img -->
+                <img
+                    src="img/portada04.png"
+                    alt="Zapatilla deportiva negra y relojes con detalles verdes"
+                    class="hero-product-image"
+                >
+
+                <!-- Etiqueta de categorías -->
+                <div class="hero-category">
+                    SNEAKERS<br>&amp; WATCHES
+                    <span></span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+
+    <!-- ==========================================
+         3. FRANJA DE BENEFICIOS
+         ========================================== -->
+    <section class="benefits-strip">
+        <div class="container">
+
+            <div class="row g-3 text-center">
+
+                <div class="col-4">
+                    <span class="benefit-icon">✦</span>
+                    <span>Estilo para cada día</span>
+                </div>
+
+                <div class="col-4">
+                    <span class="benefit-icon">✓</span>
+                    <span>Atención personalizada</span>
+                </div>
+
+                <div class="col-4">
+                    <span class="benefit-icon">↗</span>
+                    <span>Consulta fácil por WhatsApp</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==========================================
+         4. CONTENIDO PRINCIPAL DE LA PÁGINA
+         ========================================== -->
+    <main>
+
+        <!-- ------------------------------------------
+             4.1 CATÁLOGO DE PRODUCTOS
+             Los productos se generan desde JavaScript.
+             ------------------------------------------ -->
+        <section class="container py-5" id="productos">
+
+            <!-- Título, filtro y buscador -->
+            <div class="section-heading d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3 mb-4">
+
+                <div>
+                    <p class="section-kicker mb-2">
+                        DESCUBRE EL CATÁLOGO
+                    </p>
+
+                    <h2 class="section-title mb-2">
+                        Productos destacados
+                    </h2>
+
+                    <p class="text-secondary mb-0">
+                        Encuentra tu estilo y consulta directamente con nosotros.
+                    </p>
+                </div>
+
+
+                <!-- Controles para filtrar y buscar -->
+                <div class="catalog-controls d-flex flex-column flex-sm-row gap-2">
+
+                    <!-- Filtro por categoría -->
+                    <label class="visually-hidden" for="filtroCategoria">
+                        Filtrar por categoría
+                    </label>
+
+                    <select id="filtroCategoria" class="form-select">
+                        <option value="Todos">Todas las categorías</option>
+                        <option value="Zapatillas">Zapatillas</option>
+                        <option value="Relojes">Relojes</option>
+                    </select>
+
+
+                    <!-- Buscador de productos -->
+                    <label class="visually-hidden" for="buscarProducto">
+                        Buscar productos
+                    </label>
+
+                    <input
+                        id="buscarProducto"
+                        class="form-control"
+                        type="search"
+                        placeholder="Buscar producto..."
+                    >
+
+                </div>
+            </div>
+
+
+            <!-- JavaScript insertará aquí las tarjetas de productos -->
+            <div
+                class="row g-4"
+                id="listaProductos"
+                aria-live="polite"
+            ></div>
+
+
+            <!-- Mensaje cuando no hay coincidencias -->
+            <p
+                id="mensajeSinResultados"
+                class="text-secondary text-center py-5 d-none"
+            >
+                No encontramos productos con esa búsqueda.
+            </p>
+
+
+            <!-- Aviso de que los datos son de demostración -->
+            <p class="demo-disclaimer mt-4">
+                * Imágenes, nombres y precios ilustrativos para la presentación del demo.
+            </p>
+
+        </section>
+
+
+        <!-- ------------------------------------------
+             4.2 SECCIÓN NOSOTROS
+             ------------------------------------------ -->
+       
+<section class="about-section py-5" id="nosotros">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- Presentación del catálogo -->
+      <div class="col-lg-6">
+        <p class="section-kicker mb-3">MÁS QUE UN CATÁLOGO</p>
+
+        <h2 class="section-title mb-4">
+          Encuentra tu estilo.
+          <span>Elige tu próximo favorito.</span>
+        </h2>
+
+        <p class="about-description mb-4">
+          Descubre zapatillas y relojes seleccionados para complementar
+          tu estilo. Explora las opciones, revisa los precios y consulta
+          directamente por WhatsApp.
+        </p>
+
+        <a href="#productos" class="btn btn-accent btn-lg">
+          Explorar productos →
+        </a>
+      </div>
+
+      <!-- Beneficios de comprar por el catálogo -->
+      <div class="col-lg-6">
+        <div class="about-benefits">
+
+          <article class="about-benefit">
+            <span class="about-benefit-icon">01</span>
+            <div>
+              <h3>Explora a tu ritmo</h3>
+              <p>Revisa los productos y encuentra el que más te guste.</p>
+            </div>
+          </article>
+
+          <article class="about-benefit">
+            <span class="about-benefit-icon">02</span>
+            <div>
+              <h3>Consulta directamente</h3>
+              <p>Pregunta por precios, disponibilidad y detalles por WhatsApp.</p>
+            </div>
+          </article>
+
+          <article class="about-benefit">
+            <span class="about-benefit-icon">03</span>
+            <div>
+              <h3>Atención personalizada</h3>
+              <p>Recibe información para elegir el producto adecuado para ti.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+    
+<!-- =========================================
+     4.3 SECCIÓN DE CONTACTO
+     ========================================= -->
+<section class="contact-section py-5" id="contacto">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- COLUMNA IZQUIERDA -->
+      <div class="col-lg-5">
+        <p class="contact-kicker">ESTAMOS PARA AYUDARTE</p>
+
+        <h2 class="contact-title">
+          ¿Encontraste algo que
+          <span>te gusta?</span>
+        </h2>
+
+        <p class="contact-description">
+          Escríbenos para consultar precios, disponibilidad y detalles
+          de nuestros productos. ¡Estamos listos para atenderte!
+        </p>
+
+        <a href="#" id="contactoWhatsApp"
+           class="contact-info-card">
+          <span class="contact-info-icon">
+            <svg viewBox="0 0 24 24" width="27" height="27"
+                 fill="currentColor" aria-hidden="true">
+              <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.95L.05 24l6.3-1.65a11.9 11.9 0 0 0 5.7 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.44-8.42ZM12.06 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.38a9.85 9.85 0 0 1-1.51-5.26c0-5.46 4.44-9.9 9.9-9.9a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.9 7c0 5.46-4.44 9.9-9.9 9.9Z"/>
+            </svg>
+          </span>
+          <span class="contact-info-text">
+            <small>WHATSAPP</small>
+            <strong>Escríbenos por WhatsApp</strong>
+            <span>Consultas rápidas y atención personalizada</span>
+          </span>
+          <span class="contact-arrow">↗</span>
+        </a>
+
+        
+        <a href="#formularioContacto" class="contact-info-card">
+          <span class="contact-info-icon">✓</span>
+          <span class="contact-info-text">
+            <small>ATENCIÓN PERSONALIZADA</small>
+            <strong>Estamos aquí para ayudarte</strong>
+            <span>Completa el formulario y cuéntanos qué necesitas.</span>
+          </span>
+          <span class="contact-arrow">↗</span>
+        </a>
+
+
+        <div class="contact-note">
+          <span>✦</span>
+          <p>
+            Explora el catálogo, elige tus favoritos y contáctanos
+            para conocer más detalles.
+          </p>
+        </div>
+      </div>
+
+      <!-- COLUMNA DERECHA: FORMULARIO DEMO -->
+      <div class="col-lg-7">
+        <div class="contact-form-card">
+          <div class="contact-form-heading">
+            <p class="contact-kicker">HABLEMOS</p>
+            <h3>¿Qué producto te interesa?</h3>
+            <p>Déjanos tus datos y cuéntanos qué estás buscando.</p>
+          </div>
+
+          <form id="formularioContacto">
+            <div class="row g-3">
+
+              <div class="col-md-6">
+                <label for="contactoNombre">Nombre</label>
+                <input type="text" id="contactoNombre"
+                       class="form-control"
+                       placeholder="Tu nombre completo" required>
+              </div>
+
+              <div class="col-md-6">
+                <label for="contactoEmpresa">Empresa (opcional)</label>
+                <input type="text" id="contactoEmpresa"
+                       class="form-control"
+                       placeholder="Empresa o marca">
+              </div>
+
+              <div class="col-md-6">
+                <label for="contactoCorreo">Correo electrónico (opcional)</label>
+                <input type="email" id="contactoCorreo"
+                       class="form-control"
+                       placeholder="tu@correo.com">
+              </div>
+
+              <div class="col-md-6">
+                <label for="contactoProducto">Producto de interés</label>
+                <select id="contactoProducto" class="form-select" required>
+                  <option value="">Selecciona una opción</option>
+                  <option value="Zapatillas">Zapatillas</option>
+                  <option value="Relojes">Relojes</option>
+                  <option value="Zapatillas y relojes">Ambos</option>
+                  <option value="Otro producto">Otro producto</option>
+                </select>
+              </div>
+
+              <div class="col-12">
+                <label for="contactoMensaje">Cuéntanos qué necesitas</label>
+                <textarea id="contactoMensaje" class="form-control"
+                          rows="4"
+                          placeholder="Escribe aquí tu consulta..."
+                          required></textarea>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="contact-submit">
+                  Enviar consulta de demostración <span>→</span>
+                </button>
+                <p class="contact-form-legal">
+                  Formulario de muestra. No envía ni almacena datos.
+                </p>
+              </div>
+
+              <div class="col-12">
+                <p id="contactoResultado" class="contact-result"
+                   role="status" aria-live="polite" hidden></p>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    </main>
+
+
+ 
+<!-- =========================================
+     5. PIE DE PÁGINA
+     ========================================= -->
+<footer class="footer-demo" id="pie-pagina">
+  <div class="container">
+
+    <div class="row g-4 footer-principal">
+
+      <!-- MARCA -->
+      <div class="col-lg-5 col-md-12">
+        <a href="#inicio" class="footer-marca">
+          <span class="footer-logo">T</span>
+          <span>TIENDA <span class="footer-marca-secundaria">DEMO</span></span>
+        </a>
+
+        <p class="footer-eslogan">
+          Estilo que marca la diferencia.
+        </p>
+
+        <p class="footer-descripcion">
+          Explora nuestro catálogo de zapatillas y relojes.
+          Encuentra tus favoritos y consulta directamente con nosotros.
+        </p>
+      </div>
+
+      <!-- NAVEGACIÓN -->
+      <div class="col-lg-3 col-md-6">
+        <h3 class="footer-titulo">EXPLORA</h3>
+        <ul class="footer-enlaces">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Catálogo</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- ATENCIÓN -->
+      <div class="col-lg-4 col-md-6">
+        <h3 class="footer-titulo">ATENCIÓN</h3>
+        <ul class="footer-enlaces">
+          <li>
+            <a href="#contacto">Consulta por WhatsApp</a>
+          </li>
+          <li>
+            <a href="#productos">Información de productos</a>
+          </li>
+          <li>
+            <a href="#formularioContacto">Atención personalizada</a>
+          </li>
+        </ul>
+
+        <a href="#contacto" class="footer-boton">
+          ¿Tienes alguna consulta? <span>↗</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- BARRA INFERIOR -->
+    <div class="footer-inferior">
+      <div>
+        <p class="footer-copyright">
+          © 2026 Tienda Demo. Todos los derechos reservados.
+        </p>
+        <p class="footer-demo-nota">
+          Catálogo de demostración.
+        </p>
+      </div>
+
+      <a href="#inicio" class="footer-volver">
+        Volver arriba <span>↑</span>
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+
+    <!-- ==========================================
+         6. ARCHIVOS JAVASCRIPT
+         Se cargan al final para que exista el HTML.
+         ========================================== -->
+
+    <!-- Bootstrap: funcionamiento del menú en celulares -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Datos de los productos -->
+    <script src="js/productos.js"></script>
+
+    <!-- Botón flotante de WhatsApp -->
+      <a
+          id="whatsappFlotante"
+          class="whatsapp-flotante"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Consultar por WhatsApp"
+          title="Escríbenos por WhatsApp"
+        >
+          
+        <span class="whatsapp-flotante-icono" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="27" height="27" fill="currentColor">
+            <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.15 1.6 5.95L.05 24l6.3-1.65a11.9 11.9 0 0 0 5.7 1.45h.01c6.56 0 11.9-5.34 11.9-11.9 0-3.18-1.24-6.17-3.44-8.42ZM12.06 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.74.98 1-3.65-.24-.38a9.85 9.85 0 0 1-1.51-5.26c0-5.46 4.44-9.9 9.9-9.9a9.83 9.83 0 0 1 7 2.9 9.83 9.83 0 0 1 2.9 7c0 5.46-4.44 9.9-9.9 9.9Zm5.43-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.08 4.5.71.31 1.26.5 1.69.64.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
+          </svg>
+        </span>
+
+          <span class="whatsapp-flotante-texto">¿Necesitas ayuda?</span>
+      </a>
+
+    <!-- Funciones: tarjetas, búsqueda y WhatsApp -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
